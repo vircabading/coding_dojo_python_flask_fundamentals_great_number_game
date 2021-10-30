@@ -1,0 +1,47 @@
+main {
+    margin: 20px 0px 0px 0px;
+}
+
+.navbar-brand>* {
+    margin: 0px 10px;
+}
+
+.card {
+    background-color: navy;
+    padding: 1%;
+    color: white;
+}
+
+.card>* {
+    margin: 10px 0px;
+}
+
+.btn {
+    border: none;
+    border-radius: 25px;
+    padding: 0px 10px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+    padding: 0px 20px;
+    border-radius: 20px;
+}
+
+form>p {
+    padding: 0px 10px 0px 0px;
+}
+
+form>button {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius:  20px;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+}
