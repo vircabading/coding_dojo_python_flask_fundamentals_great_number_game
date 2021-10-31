@@ -13,7 +13,7 @@ def index():
         session['num_tries'] += 1
         print("Session key num_tries:", session['num_tries'], ":: my_number:", session['my_number'])
     else:                                                                           # If num_visits key doesn't exist
-        session['num_tries'] = 0                                                    #   start a new game
+        session['num_tries'] = 1                                                    #   start a new game
         session['my_number'] = random.randint(1,100)                                #   get a random number from 1 to 100
         print("Session key num_tries:", session['num_tries'], ":: my_number:", session['my_number'])
     return render_template("index.html")

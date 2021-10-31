@@ -34,9 +34,13 @@
         <div class="row">
           
           <!-- **** LEFT COLUMN IN MAIN AREA -->
-          <div class="col-md-3">
+          <div class="col-md-3">                              <!-- Picture ot Zoltar-->
             <img id="zoltar-pic" src="/static/img/Zoltar Take a Guess.png" alt="Take a guess">
+            <div class="display-num-tries">
+              Try Number: {{ session['num_tries'] }}
+            </div>
           </div>
+
           <!-- **** END LEFT COLUMN IN MAIN AREA -->
           <!-- **** RIGHT COLUMN IN MAIN AREA -->
           <div class="col-md-9">
