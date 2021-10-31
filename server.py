@@ -17,6 +17,11 @@ def index():
         print("Session key num_tries:", session['num_tries'] )
     return render_template("index.html")
 
+@app.route('/game_reset')                                                           # Resets the game
+def game_reset():
+    del session['num_tries']
+    return redirect('/')                                                            # return to the root after game is reset
+
 
 # @app.route('/increment_by', methods=['POST'])
 # def increment_by():
