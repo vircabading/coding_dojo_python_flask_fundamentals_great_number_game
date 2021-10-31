@@ -6,3 +6,11 @@ main {
     width: inherit;
     height: auto;
 }
+
+.display-num-tries {
+    background-color: indianred;
+    color: yellow;
+    font-weight: bold;
+    text-align: center;
+    padding: 1% 0%;
+}
