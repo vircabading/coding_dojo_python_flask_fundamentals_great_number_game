@@ -29,7 +29,7 @@ main {
 }
 
 form {
-    background-color: cornflowerblue;
+    background-color: skyblue;
 }
 
 #number_guess {
@@ -45,9 +45,11 @@ form {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
+    font-weight: bold;
     padding: 0px 10px ;
 }
 
 .enter-selection-button:hover, .enter-selection-button:active {
     background-color: yellow;
+    color: steelblue;
 }

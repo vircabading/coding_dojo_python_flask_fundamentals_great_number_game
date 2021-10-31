@@ -1,3 +1,4 @@
+from math import trunc
 import random
 from flask import Flask, render_template, session, redirect, request
 
@@ -22,9 +23,29 @@ def index():
 def game_reset():
     del session['num_tries']
     del session['my_number']
+    del session['number_guess']
+    del session['input_error']
     print("::: Game has been RESET :::")
     return redirect('/')                                                            # return to the root after game is reset
 
+@app.route('/get_guess', methods=['POST'])
+def get_guess():
+    session['number_guess'] = request.form['number_guess']
+    if session['number_guess'].isnumeric():
+        session['number_guess'] = int(session['number_guess'])
+        session['input_error']=False
+    else:
+        session['number_guess'] = 50
+        session['input_error'] = True
+    
+    # if request.form['number_guess'] != "":
+    #     session['number_guess'] = int(request.form['number_guess'])
+    #     session['input_error'] = 0
+    # else:
+    #     session['number_guess'] = 50
+    #     session['input_error'] = 1
+    print("Got number guess of:", session['number_guess'], "from form post :: Input Error state:", session['input_error'])
+    return redirect("/")
 
 # @app.route('/increment_by', methods=['POST'])
 # def increment_by():
