@@ -11,10 +11,11 @@ app.secret_key = "TiYSKDNRitA!"                                                 
 def index():
     if 'num_tries' in session:                                                     # If  num_visits key exists
         session['num_tries'] += 1
-        print("Session key num_tries:", session['num_tries'] )
+        print("Session key num_tries:", session['num_tries'], ":: my_number:", session['my_number'])
     else:                                                                           # If num_visits key doesn't exist
-        session['num_tries'] = 0
-        print("Session key num_tries:", session['num_tries'] )
+        session['num_tries'] = 0                                                    #   start a new game
+        session['my_number'] = random.randint(1,100)                                #   get a random number from 1 to 100
+        print("Session key num_tries:", session['num_tries'], ":: my_number:", session['my_number'])
     return render_template("index.html")
 
 @app.route('/game_reset')                                                           # Resets the game
