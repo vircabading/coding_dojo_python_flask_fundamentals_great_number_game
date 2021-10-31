@@ -1,4 +1,4 @@
-import datetime
+import random
 from flask import Flask, render_template, session, redirect, request
 
 from werkzeug.datastructures import RequestCacheControl
@@ -9,14 +9,12 @@ app.secret_key = "TiYSKDNRitA!"                                                 
 
 @app.route('/')                                                                     # Main Page
 def index():
-    if 'num_visits' and 'count' in session:                                                     # If  num_visits key exists
-        session['num_visits'] += 1                                                  #   increment num_visits by 1
-        session['count'] += 1
-        print("Session key num_visits:", session['num_visits'] )
+    if 'num_tries' in session:                                                     # If  num_visits key exists
+        session['num_tries'] += 1
+        print("Session key num_tries:", session['num_tries'] )
     else:                                                                           # If num_visits key doesn't exist
-        session['num_visits'] = 1                                                       #   initialize num_visits to 1
-        session['count'] = 1
-        print("Session key num_visits:", session['num_visits'] )
+        session['num_tries'] = 0
+        print("Session key num_tries:", session['num_tries'] )
     return render_template("index.html")
 
 
