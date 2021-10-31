@@ -31,3 +31,23 @@ main {
 form {
     background-color: cornflowerblue;
 }
+
+#number_guess {
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px ;
+    text-align: center ;
+}
+
+.enter-selection-button {
+    background-color: indianred;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: white;
+    padding: 0px 10px ;
+}
+
+.enter-selection-button:hover, .enter-selection-button:active {
+    background-color: yellow;
+}
