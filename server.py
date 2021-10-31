@@ -21,6 +21,8 @@ def index():
 @app.route('/game_reset')                                                           # Resets the game
 def game_reset():
     del session['num_tries']
+    del session['my_number']
+    print("::: Game has been RESET :::")
     return redirect('/')                                                            # return to the root after game is reset
 
 
