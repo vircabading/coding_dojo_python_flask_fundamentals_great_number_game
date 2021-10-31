@@ -60,6 +60,27 @@
                 Enter Selection
               </button>
             </form>
+            <div class="response" style="background-color: {{ session['color'] }};">
+              <h1>
+                {% if session['message'] != "start" %}
+                  {% if session['num_tries'] > 5 %}                       <!--Game over--> 
+                    GAME OVER<br><br>
+                    <a class="play-again" href="/game_reset">Play Again</a>
+                  {% elif session['input_error'] %}                           <!--# if entered invalid input-->
+                    That was a poor guess
+                  {% elif session['number_guess'] == session['my_number'] %}  <!--if guessed correctly-->
+                    You Guessed Wisely<br>
+                    The Number was {{session['my_number']}}<br>
+                    You got it in {{ session['num_tries'] }} tries<br><br>
+                    <a class="play-again" href="/game_reset">Play Again</a>
+                  {% elif session['number_guess'] < session['my_number']  %}
+                    Too Low!
+                  {% else %}
+                    Too High!
+                  {% endif %}
+                {% endif %}
+              </h1>
+            </div>
           </div>
           <!-- **** END RIGHT COLUMN IN MAIN AREA -->
         </div>
